@@ -3,25 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BITL4R - Dhamrai Govt College</title>
+<title>BITL4R - Dhamrai Govt College Notes</title>
 <style>
-body{background:#0a0a0a;color:#fff;font-family:sans-serif;padding:20px}
-.header{border:1px solid #222;padding:15px;border-radius:10px;margin-bottom:20px}
-.highlight{color:#facc15}
-.card{border:1px solid #222;padding:15px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;text-decoration:none;color:#fff}
-.icon{font-size:24px}
-.badge{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:bold}
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Hind Siliguri',sans-serif}
+body{background:#f8f5ec;color:#1a1a1a;min-height:100vh;padding:20px}
+.header{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#fff;padding:22px;border-radius:16px;margin-bottom:22px;border:1px solid #facc15}
+.header b{color:#facc15;font-size:16px}
+.header small{opacity:.7;display:block;margin-top:6px;font-size:13px}
+.header .by{color:#facc15}
+.card{background:#fff;border:1px solid #e7e0cc;padding:16px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;text-decoration:none;color:#1a1a1a;transition:.2s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08);border-color:#facc15}
+.left{display:flex;gap:12px;align-items:center;font-weight:600}
+.icon{width:40px;height:40px;background:#fef9e7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.badge-empty{background:#f3f3f3;color:#999;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.badge-file{background:#facc15;color:#000;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.footer{text-align:center;margin-top:30px;font-size:12px;opacity:.5}
 </style>
 </head>
 <body>
 
 <div class="header">
 <div><b>BITL4R Project</b> · Dhamrai Govt College Notes Archive</div>
-<div style="font-size:13px;opacity:.6">Developed by <span class="highlight">Saikat Islam</span> · HSC 2026</div>
-<div style="font-size:11px;opacity:.4">bitl4r-art.github.io/BITL4R/</div>
+<small>Developed by <span class="by">Saikat Islam</span> · HSC 2026 | bitl4r-art.github.io/BITL4R/</small>
 </div>
 
 <div id="list"></div>
+
+<div class="footer">© 2026 BITL4R · All Notes for Dhamrai Govt College Students</div>
 
 <script>
 const subjects = [
@@ -40,16 +49,12 @@ const subjects = [
 {id:'socialwork2nd',n:'সমাজকর্ম ২য় পত্র',e:'🤝'},
 ];
 
-const list = document.getElementById('list');
-list.innerHTML = subjects.map(s=>{
-  const hasFile = s.f && s.f.length > 0;
-  const link = hasFile ? `https://bitl4r-art.github.io/BITL4R/${s.f[0]}` : '#';
-  const badge = hasFile 
-    ? `<span style="background:#facc15;color:#000;padding:3px 10px;border-radius:20px;font-size:12px">1 FILE</span>`
-    : `<span style="background:#222;color:#666;padding:3px 10px;border-radius:20px;font-size:12px">EMPTY</span>`;
-  return `<a class="card" href="${link}" target="_blank"><div style="display:flex;gap:10px;align-items:center"><div class="icon">${s.e}</div><div>${s.n}</div></div>${badge}</a>`;
+document.getElementById('list').innerHTML = subjects.map(s=>{
+  const has = s.f && s.f.length>0;
+  const link = has ? `https://bitl4r-art.github.io/BITL4R/${s.f[0]}` : '#';
+  const badge = has ? `<span class="badge-file">1 FILE</span>` : `<span class="badge-empty">EMPTY</span>`;
+  return `<a class="card" href="${link}" target="_blank"><div class="left"><div class="icon">${s.e}</div><div>${s.n}</div></div>${badge}</a>`;
 }).join('');
 </script>
-
 </body>
 </html>
