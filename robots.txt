@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bitl4r-art.github.io/BITL4R/sitemap.xml
