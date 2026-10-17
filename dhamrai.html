@@ -1,63 +1,91 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dhamrai Govt. College - Study Zone</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BITL4R - Dhamrai College Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family: 'Noto Sans Bengali', sans-serif; background:#f1f5f9; color:#0f172a; margin:0;}
-.topbar{background:#1e3a8a; color:white; text-align:center; padding:25px 15px; border-radius:0 0 25px 25px;}
-.topbar h1{margin:0; font-size:30px; letter-spacing:1px;}
-.topbar h2{margin:5px 0 0 0; font-size:16px; font-weight:400; opacity:0.9;}
-.creator-card{background:white; margin:-25px 20px 20px 20px; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); text-align:center; border:1px solid #e2e8f0;}
-.creator-card .made{font-size:13px; color:#64748b; letter-spacing:2px; font-weight:bold;}
-.creator-card .myname{font-size:22px; font-weight:800; color:#1e3a8a; margin:5px 0;}
-.creator-card .helpers{margin-top:12px; padding-top:12px; border-top:1px dashed #cbd5e1; font-size:14px; color:#334155;}
-.helpers b{color:#0f172a;}
-.container{padding:10px 15px;}
-.grid{display:grid; grid-template-columns: 1fr 1fr; gap:12px;}
-.box{background:white; padding:15px; border-radius:12px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.05); border:1px solid #e2e8f0;}
-.box h3{margin:5px 0; font-size:14px; color:#1e293b;}
-.btn{display:block; background:#1e3a8a; color:white; padding:9px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:8px; font-size:13px;}
-.btn:hover{background:#0f172a;}
-.footer{text-align:center; padding:25px; font-size:12px; color:#94a3b8;}
-@media(max-width:600px){ .grid{grid-template-columns: 1fr 1fr;} }
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui;background:#fff;color:#111}
+.topbar{font-size:12px;background:#fafafa;border-bottom:1px solid #eee;padding:8px 20px;display:flex;justify-content:space-between}
+.nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10}
+.logo{font-weight:800;font-size:22px;letter-spacing:1px}.logo span{color:#ef4444}
+.menu{display:flex;gap:18px;font-size:14px;font-weight:600}.menu a{text-decoration:none;color:#111}
+.searchbox{border:1px solid #eee;background:#f9fafb;padding:8px 12px;border-radius:8px;width:200px}
+.hero{background:#fdf2f8;padding:50px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.hero h2{font-size:38px;line-height:1.1}.hero h2 b{display:block;font-size:42px}
+.btn{background:#111;color:#fff;padding:12px 22px;border-radius:4px;text-decoration:none;display:inline-block;margin-top:18px;font-size:14px}
+.books{display:flex;gap:12px}
+.book{width:110px;height:150px;border-radius:6px;box-shadow:0 10px 20px rgba(0,0,0,.15);padding:10px;color:#fff;font-weight:700;font-size:12px;display:flex;align-items:end}
+.section{padding:30px 20px;max-width:1200px;margin:0 auto}
+.sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.grid5{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.cat{padding:22px;border-radius:8px;cursor:pointer;transition:.2s;border:1px solid transparent}
+.cat:hover{transform:translateY(-3px);border-color:#111}
+.cat small{opacity:.7}
+.gridNotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.noteCard{border:1px solid #eee;border-radius:10px;padding:14px;background:#fff;text-align:center;cursor:pointer}
+.noteCard:hover{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.fileList{margin-top:10px}
+.file-item{display:flex;justify-content:space-between;background:#f8fafc;padding:10px 12px;border-radius:10px;margin:8px 0}
+.file-item a{background:#111;color:#fff;padding:5px 12px;border-radius:6px;text-decoration:none;font-size:13px}
+.footer{text-align:center;padding:30px;color:#64748b;font-size:14px;border-top:1px solid #eee;margin-top:20px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:99;padding:16px;overflow:auto}
+.modal-box{background:#fff;max-width:700px;margin:40px auto;padding:22px;border-radius:16px}
+#searchMain{width:100%;padding:14px;border:1px solid #e5e7eb;border-radius:12px;margin:16px 0;font-size:16px}
 </style>
 </head>
 <body>
-
-<div class="topbar">
-<h1>🏫 DHAMRAI GOVT. COLLEGE</h1>
-<h2>Inter 1st Year - All Study Materials</h2>
+<div class="topbar"><span>📞 +880 Dhamrai College Notes</span><span>Developed by Saikat Islam</span></div>
+<div class="nav"><div class="logo">BI<span>T</span>L4R</div><div class="menu"><a href="#">Home</a><a href="#">Categories</a><a href="#">Shop</a><a href="#">Notes</a></div><input class="searchbox" placeholder="Search by keyword"></div>
+<div class="hero">
+<div><p style="font-size:11px;letter-spacing:2px;color:#888">DHAMRAI COLLEGE NOTES</p><h2>Featured Notes of the Month <b>February</b></h2><a class="btn" href="#notes">See More</a></div>
+<div class="books"><div class="book" style="background:#1e3a8a">ICT<br>Class XI</div><div class="book" style="background:#166534">ENGLISH<br>Grammar</div><div class="book" style="background:#dc2626">BANGLA<br>১ম পত্র</div><div class="book" style="background:#a16207">ISLAMIC<br>HISTORY</div><div class="book" style="background:#6d28d9">ECONOMICS<br>Fundamentals</div></div>
 </div>
-
-<div class="creator-card">
-<div class="made">WEBSITE CREATED BY</div>
-<div class="myname">✨ SAIKAT ✨</div>
-<div class="helpers">
-সহযোগিতায়: <b>Tanjid Hasan</b> & <b>Polas Islam</b>
+<div class="section" id="notes">
+<div class="sec-head"><h3>Featured Categories</h3><a href="#" style="font-size:13px">All Categories →</a></div>
+<input id="searchMain" placeholder="🔍 সাবজেক্ট খুঁজো... economics, ict, islamic..." oninput="filterSub()">
+<div class="grid5" id="grid"></div>
 </div>
+<div class="section">
+<div class="sec-head"><h3>Bestselling Notes</h3><span style="font-size:13px">View All →</span></div>
+<div class="gridNotes" id="best"></div>
 </div>
-
-<div class="container">
-<div class="grid">
-<div class="box"><h3>💻 ICT</h3><a class="btn" href="ict.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>📖 বাংলা ১ম</h3><a class="btn" href="bangla1st.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>📖 বাংলা ২য়</h3><a class="btn" href="bangla2nd.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>📘 English 1st</h3><a class="btn" href="english1st.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>📘 English 2nd</h3><a class="btn" href="english2nd.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🏛️ পৌরনীতি ১ম</h3><a class="btn" href="civics1st.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🏛️ পৌরনীতি ২য়</h3><a class="btn" href="civics2nd.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🌾 কৃষি ১ম</h3><a class="btn" href="agriculture1st.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🌾 কৃষি ২য়</h3><a class="btn" href="agriculture2nd.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🤝 সমাজকর্ম ১ম</h3><a class="btn" href="socialwork1st.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🤝 সমাজকর্ম ২য়</h3><a class="btn" href="socialwork2nd.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🕌 ইসলামের ইতিহাস ১ম</h3><a class="btn" href="islamic1st.pdf" target="_blank">PDF পড়ো</a></div>
-<div class="box"><h3>🕌 ইসলামের ইতিহাস ২য়</h3><a class="btn" href="islamic2nd.pdf" target="_blank">PDF পড়ো</a></div>
-</div>
-</div>
-
-<p class="footer">Dhamrai Govt. College © 2026 | Made for Students</p>
-
+<div class="footer">Developed by <b>Saikat Islam</b> | Helped by Polash Islam & Tanjid Hasan<br>© 2025 BITL4R - Dhamrai Govt College, Dhaka</div>
+<div id="modal" class="modal" onclick="if(event.target==this)closeM()"><div class="modal-box"><span style="float:right;font-size:28px;cursor:pointer" onclick="closeM()">×</span><h2 id="mTitle"></h2><div id="mList">লোড হচ্ছে...</div><p style="font-size:11px;color:#888;margin-top:12px">নাম দাও: subject-ch1.pdf যেমন economics1st-ch1.pdf, economics2nd-note.jpg, ict-ch1.pdf</p></div></div>
+<script>
+const subjects=[
+{id:'bangla1st',name:'বাংলা ১ম পত্র',color:'#fef3c7'},{id:'bangla2nd',name:'বাংলা ২য়',color:'#fce7f3'},
+{id:'english1st',name:'English 1st',color:'#dbeafe'},{id:'english2nd',name:'English 2nd',color:'#e0e7ff'},
+{id:'ict',name:'ICT',color:'#dcfce7'},{id:'islamic1st',name:'ইসলামের ইতিহাস ১ম',color:'#ccfbf1'},{id:'islamic2nd',name:'ইসলামের ইতিহাস ২য়',color:'#ffedd5'},
+{id:'civics1st',name:'পৌরনীতি ১ম',color:'#f3e8ff'},{id:'civics2nd',name:'পৌরনীতি ২য়',color:'#ede9fe'},
+{id:'economics1st',name:'অর্থনীতি ১ম পত্র',color:'#d1fae5'},{id:'economics2nd',name:'অর্থনীতি ২য় পত্র',color:'#bfdbfe'},
+{id:'economics',name:'Economics (All)',color:'#fef9c3'},
+{id:'socialwork1st',name:'সমাজকর্ম ১ম',color:'#fce7f3'},{id:'socialwork2nd',name:'সমাজকর্ম ২য়',color:'#e0f2fe'},
+];
+let allFiles=[];const grid=document.getElementById('grid');const best=document.getElementById('best');
+function render(list){
+ grid.innerHTML='';best.innerHTML='';
+ list.forEach(s=>{
+  const d=document.createElement('div');d.className='cat';d.style.background=s.color;
+  d.innerHTML=`<div style="font-size:28px">📚</div><b>${s.name}</b><br><small>Shop Now</small><br><small style="color:#666">${s.id}</small>`;
+  d.onclick=()=>openSub(s);grid.appendChild(d);
+  const b=document.createElement('div');b.className='noteCard';b.innerHTML=`<div style="background:${s.color};height:110px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700">${s.name}</div><div style="margin-top:8px"><b>${s.name}</b><br><small style="color:#888">Shop Now</small></div>`;
+  b.onclick=()=>openSub(s);best.appendChild(b);
+ });
+}
+render(subjects);
+function filterSub(){const q=document.getElementById('searchMain').value.toLowerCase();render(subjects.filter(s=>s.name.toLowerCase().includes(q)||s.id.includes(q)));}
+async function fetchFiles(){try{const r=await fetch('https://api.github.com/repos/bitl4r-art/BITL4R/contents/');const data=await r.json();allFiles=data.filter(f=>/\.(pdf|jpg|jpeg|png)$/i.test(f.name)).map(f=>f.name);}catch(e){}}
+fetchFiles();
+function openSub(sub){
+ document.getElementById('modal').style.display='block';
+ document.getElementById('mTitle').innerText='📚 '+sub.name;
+ const matched=allFiles.filter(n=>n.toLowerCase().startsWith(sub.id.toLowerCase()));
+ const list=document.getElementById('mList');
+ if(matched.length===0){list.innerHTML=`<p>এখনো ফাইল নেই। এইভাবে আপলোড দাও:<br><code>${sub.id}.pdf</code><br><code>${sub.id}-ch1.pdf</code><br><code>${sub.id}-ch2.pdf</code><br><code>${sub.id}-note.jpg</code><br>যত খুশি তত!</p>`}
+ else{list.innerHTML=matched.map((f,i)=>{const url=`https://bitl4r-art.github.io/BITL4R/${encodeURIComponent(f)}`;return `<div class="file-item"><span>${i+1}. ${f}</span><a href="${url}" target="_blank">Open</a></div>`}).join('');}
+}
+function closeM(){document.getElementById('modal').style.display='none';}
+</script>
 </body>
 </html>
