@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache"><title>BITL4R - Dhamrai Govt College</title><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&family=Inter:wght@800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Hind Siliguri',sans-serif;background:#f1f5f9}.nav{max-width:1100px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;border-radius:14px;margin-top:12px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center}.hero{max-width:1100px;margin:12px auto;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;border-radius:20px;padding:22px;position:relative;overflow:hidden}.hero h1{font-size:28px;line-height:1.1}.badgeTop{display:inline-block;background:#ffffff1a;padding:4px 10px;border-radius:20px;font-size:11px;margin-bottom:8px}.creditHero{margin-top:14px;background:#ffffff12;border:1px solid #ffffff22;border-radius:12px;padding:10px 14px;display:inline-block}.creditHero b{color:#facc15}.searchWrap{max-width:1100px;margin:0 auto}.searchWrap input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid #e2e8f0;outline:none;font-size:15px}.grid{max-width:1100px;margin:12px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center;text-decoration:none;color:#0f172a}.card:hover{border-color:#0f172a}.foot{max-width:1100px;margin:20px auto;background:#0f172a;color:#94a3b8;border-radius:16px;padding:18px;text-align:center}.foot b{color:#fff}.foot .highlight{color:#facc15}</style></head><body>
+<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache"><title>BITL4R - Dhamrai Govt College</title><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&family=Inter:wght@800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Hind Siliguri',sans-serif;background:#f1f5f9}.nav{max-width:1100px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;border-radius:14px;margin-top:12px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center}.hero{max-width:1100px;margin:12px auto;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;border-radius:20px;padding:22px;position:relative;overflow:hidden}.hero h1{font-size:28px;line-height:1.1}.badgeTop{display:inline-block;background:#ffffff1a;padding:4px 10px;border-radius:20px;font-size:11px;margin-bottom:8px}.creditHero{margin-top:14px;background:#ffffff12;border:1px solid #ffffff22;border-radius:12px;padding:10px 14px;display:inline-block}.creditHero b{color:#facc15}.searchWrap{max-width:1100px;margin:0 auto}.searchWrap input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid #e2e8f0;outline:none;font-size:15px}.grid{max-width:1100px;margin:12px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center;text-decoration:none;color:#0f172a}.card:hover{border-color:#0f172a}.secTitle{max-width:1100px;margin:22px auto 0;padding:0 4px;font-family:Inter;font-weight:800;font-size:18px}.foot{max-width:1100px;margin:20px auto;background:#0f172a;color:#94a3b8;border-radius:16px;padding:18px;text-align:center}.foot b{color:#fff}.foot .highlight{color:#facc15}</style></head><body>
 <div class="nav"><span style="font-family:Inter;font-weight:800">BITL4R</span><span style="font-size:12px;color:#64748b">Dhamrai Govt College • HSC 2026</span></div>
 
 <div class="hero">
@@ -16,7 +16,12 @@
 </div>
 
 <div class="searchWrap"><input id="s" placeholder="🔍 খুঁজো... অর্থনীতি, ict, bangla..." oninput="filt()"></div>
+
+<div class="secTitle">📚 Subjects</div>
 <div class="grid" id="grid"></div>
+
+<div class="secTitle">🌐 Others</div>
+<div class="grid" id="others"></div>
 
 <div class="foot">
 <div style="font-size:14px"><b>BITL4R Project</b> • Dhamrai Govt College Notes Archive</div>
@@ -34,12 +39,28 @@ const subs=[
 {id:'economics1st',n:'অর্থনীতি ১ম পত্র',e:'📈'},{id:'economics2nd',n:'অর্থনীতি ২য় পত্র',e:'📈'},
 {id:'socialwork1st',n:'সমাজকর্ম ১ম পত্র',e:'🤝'},{id:'socialwork2nd',n:'সমাজকর্ম ২য় পত্র',e:'🤝'},
 ];
+
+// NEW OTHERS SECTION - তুই এখানে লিংক চেঞ্জ করতে পারবি
+const others=[
+{id:'college',n:'College Official Site',d:'dhamraigovtcollege.gov.bd',e:'🏫',link:'https://dhamraigovtcollege.gov.bd'},
+{id:'notice',n:'College Notice Board',d:'All notices',e:'📢',link:'#'},
+{id:'routine',n:'Class Routine',d:'HSC 2026 Routine',e:'🗓️',link:'#'},
+{id:'result',n:'Exam Results',d:'Internal results',e:'🎯',link:'#'},
+{id:'admission',n:'Admission Info',d:'HSC Admission',e:'📝',link:'#'},
+{id:'contact',n:'Contact Us',d:'Saikat Islam',e:'📞',link:'#'},
+];
+
 function render(list){
  document.getElementById('grid').innerHTML=list.map(s=>{
   let has=s.f&&s.f.length;
   let link=has?`https://bitl4r-art.github.io/BITL4R/${s.f[0]}`:'#';
   let badge=has?`<span style="background:#dcfce7;color:#166534;padding:3px 8px;border-radius:20px;font-size:10px">1 টি ফাইল</span>`:`<span style="background:#f1f5f9;color:#64748b;padding:3px 8px;border-radius:20px;font-size:10px">ফাইল নেই</span>`;
   return `<a class="card" href="${link}" target="_blank"><div style="width:40px;height:40px;background:#f8fafc;border-radius:8px;display:flex;align-items:center;justify-content:center">${s.e}</div><div style="flex:1"><div style="font-weight:700;font-size:13px">${s.n}</div><div style="font-size:10px;color:#94a3b8">${s.id}.pdf</div></div>${badge}</a>`;
+ }).join('');
+
+ // Render Others
+ document.getElementById('others').innerHTML=others.map(o=>{
+  return `<a class="card" href="${o.link}" target="_blank" style="border-style:dashed"><div style="width:40px;height:40px;background:#fef9c3;border-radius:8px;display:flex;align-items:center;justify-content:center">${o.e}</div><div style="flex:1"><div style="font-weight:700;font-size:13px">${o.n}</div><div style="font-size:10px;color:#94a3b8">${o.d}</div></div><span style="font-size:16px">→</span></a>`;
  }).join('');
 }
 render(subs);
